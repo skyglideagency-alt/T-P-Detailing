@@ -1,0 +1,9 @@
+{
+  "name": "T & P Detailing - Showroom Ready Auto Detailing",
+  "description": "Panama City's premier automotive detailing service. Showcasing before & after transformations, transparent pricing packages, and instant online booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
+
