@@ -34,7 +34,7 @@ export const FloatingElements: React.FC<FloatingElementsProps> = ({ onOpenBookin
 
       {/* 2. Floating Live Activity Badge (Bottom Left, Desktop) */}
       {showNotificationBadge && (
-        <div className="fixed bottom-6 left-6 z-30 hidden md:flex items-center gap-3 p-3 rounded-2xl bg-[#140C24]/90 backdrop-blur-md border border-purple-500/40 shadow-xl shadow-purple-950/70 animate-float-slow">
+        <div className="fixed bottom-24 sm:bottom-28 left-6 z-30 hidden md:flex items-center gap-3 p-3 rounded-2xl bg-[#140C24]/90 backdrop-blur-md border border-purple-500/40 shadow-xl shadow-purple-950/70 animate-float-slow">
           <div className="relative">
             <div className="w-9 h-9 rounded-xl bg-purple-600/30 border border-purple-400/40 flex items-center justify-center text-purple-300">
               <Sparkles className="w-4 h-4 text-purple-300" />
@@ -65,8 +65,8 @@ export const FloatingElements: React.FC<FloatingElementsProps> = ({ onOpenBookin
         </div>
       )}
 
-      {/* 3. Floating Quick Booking / WhatsApp Action Bar (Bottom Right) */}
-      <div className="fixed bottom-6 right-6 z-30 flex flex-col items-end gap-2.5">
+      {/* 3. Floating Quick Booking / WhatsApp Action Bar (Bottom Right - Moved higher to avoid covering AI chat) */}
+      <div className="fixed bottom-24 sm:bottom-28 right-6 z-30 flex flex-col items-end gap-2.5">
         
         {/* Back to top button */}
         {showBackToTop && (
