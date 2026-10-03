@@ -136,7 +136,7 @@ export const ADD_ONS: AddOnOption[] = [
   }
 ];
 
-// Real transformations documented from the user's uploaded FB images
+// Real transformations documented from the user's uploaded photos (limited to exactly 3 top cases)
 export const TRANSFORMATIONS: TransformationItem[] = [
   {
     id: "cloth-seats-stain",
@@ -145,63 +145,30 @@ export const TRANSFORMATIONS: TransformationItem[] = [
     vehicle: "Compact Hatchback / Sedan",
     problem: "Heavily stained cloth seats with dark dried beverage spills, ground-in mud and moisture watermarks across seating panels.",
     solution: "Pre-treated with commercial enzyme cleaner, agitated with horsehair brush, followed by high-temp 210°F hot water extraction.",
-    beforeImg: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80", // fallback
-    afterImg: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80", // fallback
+    beforeImg: "seatStainDirty",
+    afterImg: "seatStainClean",
     highlightStat: "100% Stains Removed"
   },
   {
     id: "ram-rubber-mats",
     title: "Dodge Ram Heavy-Duty All-Weather Mat Restoration",
-    category: "Floor Restorations",
+    category: "Rubber Mats & Flooring",
     vehicle: "Ram 1500 / Truck",
     problem: "Caked Florida red clay, fine sand, and dried road grime baked into deep tread grooves.",
     solution: "Acid-free degreaser, drill brush agitation, pressure rinse, and non-greasy matte UV dressing that restores deep factory black without slippage.",
-    beforeImg: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
-    afterImg: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80",
+    beforeImg: "ramMatDirty",
+    afterImg: "ramMatClean",
     highlightStat: "OEM Matte Black Restored"
-  },
-  {
-    id: "console-deep-clean",
-    title: "Center Console & Cupholder Sanitization",
-    category: "Detail Crevices",
-    vehicle: "Ford F-150 SuperCrew",
-    problem: "Sticky beverage runoff, food debris, and dust packed into sliding trays, USB ports, and dual cupholders.",
-    solution: "Dry steam vapor brush in all seams, soft boar hair detailing brushes around knobs, and anti-static interior finish.",
-    beforeImg: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80",
-    afterImg: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
-    highlightStat: "Sanitized & Dust-Repelling"
-  },
-  {
-    id: "pet-hair-trunk",
-    title: "Extreme Pet Hair Removal in SUV Cargo Area",
-    category: "Pet Hair Extraction",
-    vehicle: "Jeep / SUV Cargo",
-    problem: "Severe dog fur deeply interlocked into dense trunk carpeting fibers, resisting normal vacuuming.",
-    solution: "Specialty Fur-Eel & pet hair stone de-weaving process, compressed air vortex pulse, and medical-grade HEPA vacuuming.",
-    beforeImg: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
-    afterImg: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80",
-    highlightStat: "Zero Strands Remaining"
-  },
-  {
-    id: "titan-footwell",
-    title: "Nissan Titan Platinum Reserve Driver Footwell Refresh",
-    category: "Interior Renovation",
-    vehicle: "Nissan Titan Platinum",
-    problem: "Heavy dirt tracks, dead grass, salt deposits, and dusty pedals after weeks of worksite hauling.",
-    solution: "Full extraction of underlying carpet, dead-pedal and brake pedal decontamination, brushed sill plates and conditioned leather bolsters.",
-    beforeImg: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
-    afterImg: "https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?auto=format&fit=crop&w=800&q=80",
-    highlightStat: "Showroom Carpet Freshness"
   },
   {
     id: "honda-exterior-gloss",
     title: "Red Honda Decontamination & Mirror Gloss Polish",
-    category: "Exterior Gloss",
+    category: "Exterior Gloss & Polish",
     vehicle: "Honda Accord Sedan",
     problem: "Dull oxidized red paint covered in heavy pollen, road film, bug etchings, and micro haze.",
     solution: "Two-bucket foam bath, clay bar iron decontamination, dual-action machine gloss polish, and hydrophobic ceramic sealant.",
-    beforeImg: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
-    afterImg: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+    beforeImg: "foamWash",
+    afterImg: "redHondaHood",
     highlightStat: "Deep Wet Mirror Gloss"
   }
 ];

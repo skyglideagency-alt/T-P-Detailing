@@ -7,9 +7,8 @@ import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { BeforeAfterShowcase } from './components/BeforeAfterShowcase';
-import { ServicesOverview } from './components/ServicesOverview';
 import { PricingPackages } from './components/PricingPackages';
-import { InteractiveCalculator } from './components/InteractiveCalculator';
+import { ClassicBookingSection } from './components/ClassicBookingSection';
 import { CustomerReviews } from './components/CustomerReviews';
 import { ServiceAreaSection } from './components/ServiceAreaSection';
 import { Footer } from './components/Footer';
@@ -21,7 +20,6 @@ export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState<boolean>(false);
   const [bookingPackageId, setBookingPackageId] = useState<string>('signature-deep-detail');
   const [bookingVehicleSize, setBookingVehicleSize] = useState<VehicleSize>('sedan');
-  const [bookingAddOns, setBookingAddOns] = useState<string[]>([]);
 
   const handleOpenBooking = () => {
     setIsBookingOpen(true);
@@ -33,55 +31,47 @@ export default function App() {
     setIsBookingOpen(true);
   };
 
-  const handleProceedFromCalculator = (pkgId: string, size: VehicleSize, addOns: string[]) => {
-    setBookingPackageId(pkgId);
-    setBookingVehicleSize(size);
-    setBookingAddOns(addOns);
-    setIsBookingOpen(true);
-  };
-
   return (
     <div className="min-h-screen bg-[#09060E] text-slate-100 flex flex-col font-sans selection:bg-purple-600 selection:text-white">
-      {/* Top Navigation */}
+      {/* Floating Menu Bar */}
       <Header onOpenBooking={handleOpenBooking} />
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* Hero Section with Floating Badges & CTA */}
+        {/* Clean Hero Section with Signature Quote & Full-Bleed Detailing Background */}
         <Hero onOpenBooking={handleOpenBooking} />
 
-        {/* Real Before & After Transformation Slider Showcase */}
+        {/* 3 High-Impact Real Before & After Transformations Slider */}
         <BeforeAfterShowcase onSelectForBooking={handleSelectPackageForBooking} />
 
-        {/* Detailing Craftsmanship & Process Overview */}
-        <ServicesOverview onOpenBooking={handleOpenBooking} />
-
-        {/* Packages & Transparent Pricing with Vehicle Size Toggle */}
+        {/* Detailing Packages & Rates with Vehicle Type Switcher */}
         <PricingPackages onSelectPackage={handleSelectPackageForBooking} />
 
-        {/* Live Instant Quote & Build Calculator */}
-        <InteractiveCalculator onProceedWithConfig={handleProceedFromCalculator} />
+        {/* Classic Clean Booking Form */}
+        <ClassicBookingSection
+          selectedPackageId={bookingPackageId}
+          selectedVehicleSize={bookingVehicleSize}
+        />
 
-        {/* Real Verified Client Reviews & Facebook Integration */}
+        {/* 100% Recommended Real Customer Reviews */}
         <CustomerReviews />
 
-        {/* Mobile Service Areas & FAQ */}
+        {/* Service Areas & Mobile Unit FAQs */}
         <ServiceAreaSection onOpenBooking={handleOpenBooking} />
       </main>
 
-      {/* Footer */}
+      {/* Quiet Footer */}
       <Footer />
 
-      {/* Floating Animated Widgets & Sticky Mobile Controls */}
+      {/* Floating Quick Action Elements (Elevated above AI chat) */}
       <FloatingElements onOpenBooking={handleOpenBooking} />
 
-      {/* Interactive Online Booking Flow Modal */}
+      {/* Classic Booking Modal */}
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
         initialPackageId={bookingPackageId}
         initialVehicleSize={bookingVehicleSize}
-        initialAddOnIds={bookingAddOns}
       />
     </div>
   );

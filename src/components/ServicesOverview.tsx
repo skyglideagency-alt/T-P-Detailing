@@ -1,5 +1,6 @@
 import React from 'react';
-import { Droplets, Sparkles, Shield, Flame, PawPrint, Truck, Wrench, CheckCircle } from 'lucide-react';
+import { Droplets, Sparkles, Shield, PawPrint, Wrench, CheckCircle } from 'lucide-react';
+import { motion } from 'motion/react';
 import ceramicGleam from '../assets/images/ceramic_coating_gleam_1790916914392.jpg';
 import foamWash from '../assets/images/foam_cannon_wash_1790916939067.jpg';
 import interiorCockpit from '../assets/images/interior_luxury_cockpit_1790916926060.jpg';
@@ -41,34 +42,46 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ onOpenBookin
   ];
 
   return (
-    <section className="py-20 bg-[#0A0612] relative overflow-hidden">
+    <section className="py-24 bg-[#0A0612] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-500/30 text-xs font-semibold text-purple-300">
+        {/* Section Heading with Scroll Animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center max-w-3xl mx-auto mb-14 space-y-3"
+        >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-950/80 border border-purple-500/30 text-xs font-semibold text-purple-300">
             <Wrench className="w-3.5 h-3.5 text-purple-400" />
             <span>Master Craftsman Procedures</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight">
             Specialized Detailing Capabilities
           </h2>
           <p className="text-sm sm:text-base text-slate-300">
             Every step is engineered to protect vehicle value, sanitize interiors, and restore optical clarity to paint.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Asymmetric Bento-like grid */}
+        {/* Asymmetric Bento-like grid with Card Animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((srv, idx) => {
             const Icon = srv.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
-                className="group rounded-2xl bg-[#120A21] border border-purple-900/30 hover:border-purple-500/50 p-6 sm:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-950/60 flex flex-col justify-between text-left"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.6, delay: idx * 0.12 }}
+                whileHover={{ y: -6, scale: 1.015 }}
+                className="group rounded-3xl bg-[#120A21] border border-purple-900/30 hover:border-purple-500/50 p-6 sm:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-950/60 flex flex-col justify-between text-left"
               >
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-purple-600/20 border border-purple-500/40 flex items-center justify-center text-purple-300 group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/40 flex items-center justify-center text-purple-300 group-hover:scale-110 transition-transform">
                       <Icon className="w-6 h-6" />
                     </div>
                     <span className="text-xs font-mono font-bold text-purple-400/80 uppercase">
@@ -76,7 +89,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ onOpenBookin
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white font-display group-hover:text-purple-300 transition-colors mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white font-display group-hover:text-purple-300 transition-colors mb-2">
                     {srv.title}
                   </h3>
 
@@ -93,7 +106,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ onOpenBookin
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
